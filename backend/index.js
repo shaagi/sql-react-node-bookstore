@@ -1,14 +1,15 @@
 import express from "express"
 import mysql from "mysql2"
 import cors from "cors"
+import 'dotenv/config'
 
 const app = express()
 
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "mwi$he$96",
-    database: "test"
+    host: process.env.host,
+    user: process.env.user,
+    password: process.env.password,
+    database: process.env.database
 })
 
 app.use(cors())
